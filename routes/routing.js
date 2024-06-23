@@ -24,7 +24,7 @@ router.get('/', (request, response) => {
         config: json,
         helper: helper,
         page: {
-            title: 'Home Page',
+            title: 'High Quality Merchandise Retailer',
             href: "/",
             page_type: "home-page"
         },
