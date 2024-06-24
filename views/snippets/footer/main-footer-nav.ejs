@@ -1,0 +1,18 @@
+<nav class="main-footer-nav">
+    <div class="main-footer-left">
+        <a href="<%- pages.home.link %>" class="copyright-link">
+            &copy; 2024 Merch EZ
+        </a>
+    </div>
+    <div class="main-footer-right">
+        <ul class="main-footer-link-list">
+            <% for(const idx in pages) { %>
+                <% if(pages[idx].title != "Home") { %>
+                    <a href="<%- pages[idx].link %>" class="main-footer-link">
+                        <li class="main-footer-link-item"><%- pages[idx].title %></li>
+                    </a>
+                <% } %>
+            <% } %>
+        </ul>
+    </div>
+</nav>

@@ -24,6 +24,8 @@
     --main-nav-font-weight: 600;
     --main-nav-color: white;
     --main-nav-hover: var(--secondary);
+    --footer-height: 50px;
+    --footer-color: white;
 }
 
 body {
@@ -52,129 +54,191 @@ header.header-content {
 
 /* --- Navigation --- */
 
-/* --- Main Navigation --- */
+    /* --- Main Navigation --- */
 
-nav.main-navigation {
-    height: var(--nav-height);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
-}
-
-.main-nav-left a.logo-link {
-    height: 80%;
-}
-
-img.main-nav-logo {
-    height: 100%;
-}
-
-.main-nav-left {
-    display: flex;
-    align-items: center;
-}
-
-ul.main-nav-link-list {
-    list-style: none;
-    display: flex;
-    margin: 0 1rem;
-    align-items: center;
-    height: 100%;
-}
-
-a.main-nav-link {
-    line-height: 1;
-    color: var(--main-nav-color);
-    text-decoration: none;
-    font-size: var(--main-nav-font-size);
-    font-weight: var(--main-nav-font-weight);
-    margin: 0px 2rem;
-    text-align: center;
-}
-
-a.main-nav-link:hover {
-    color: rgb(var(--main-nav-hover));
-}
-
-/* --- Mobile Navigation --- */
-
-    nav.mobile-navigation {
-        display: none;
-        justify-content: space-between;
+    nav.main-navigation {
         height: var(--nav-height);
-        padding: 0 1rem;
-    }
-
-    a.logo-link {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
     }
 
-    img.mobile-nav-logo {
+    .main-nav-left a.logo-link {
         height: 80%;
     }
 
-    .mobile-nav-left {
-        display: flex;
+    img.main-nav-logo {
+        height: 100%;
     }
 
-    button.mobile-nav-button {
-        height: 30px;
-        width: 30px;
-        cursor: pointer;
-        border: none;
-        background: none;
-    }
-
-    .mobile-nav-right {
+    .main-nav-left {
         display: flex;
         align-items: center;
-        margin-right: 0.5rem;
     }
 
-    /* --- Hamburger Nav --- */
+    ul.main-nav-link-list {
+        list-style: none;
+        display: flex;
+        margin: 0 1rem;
+        align-items: center;
+        height: 100%;
+    }
 
-        .hamburger-icon {
-            width: 100%;
+    a.main-nav-link {
+        line-height: 1;
+        color: var(--main-nav-color);
+        text-decoration: none;
+        font-size: var(--main-nav-font-size);
+        font-weight: var(--main-nav-font-weight);
+        margin: 0px 2rem;
+        text-align: center;
+    }
+
+    a.main-nav-link:hover {
+        color: rgb(var(--main-nav-hover));
+    }
+
+    /* --- Mobile Navigation --- */
+
+        nav.mobile-navigation {
+            display: none;
+            justify-content: space-between;
+            height: var(--nav-height);
+            padding: 0 1rem;
         }
 
-        .hamburger-line {
-            height: 3px;
-            width: 100%;
-            border-radius: 100vw;
-            background: white;
+        a.logo-link {
+            display: flex;
+            align-items: center;
         }
 
-        button.mobile-nav-button:hover .hamburger-line {
-            background: black;
+        img.mobile-nav-logo {
+            height: 80%;
         }
 
-        .hamburger-line:not(:last-of-type, :first-of-type) {
-            margin: 0.5rem 0;
+        .mobile-nav-left {
+            display: flex;
         }
+
+        button.mobile-nav-button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .mobile-nav-right {
+            display: flex;
+            align-items: center;
+            margin-right: 0.5rem;
+        }
+
+        /* --- Hamburger Nav --- */
+
+            .hamburger-icon {
+                width: 100%;
+            }
+
+            .hamburger-line {
+                height: 3px;
+                width: 100%;
+                border-radius: 100vw;
+                background: white;
+            }
+
+            button.mobile-nav-button:hover .hamburger-line {
+                background: black;
+            }
+
+            .hamburger-line:not(:last-of-type, :first-of-type) {
+                margin: 0.5rem 0;
+            }
     
+    /* --- Navigation Width --- */
+
+    @media(max-width: 800px) {
+        nav.mobile-navigation {
+            display: flex;
+        }
+
+        nav.main-navigation {
+            display: none;
+        }
+    }
+
+    @media(max-width: 450px) {
+        img.mobile-nav-logo { 
+            height: unset;
+            width: calc(107.7vw - 164.65px);
+        }
+    }
+
+    @media(max-width: 320px) {
+        img.mobile-nav-logo {
+            width: 180px;
+        }
+    }
+
+/* Footer */
+
+footer.footer-content {
+    background: rgb(var(--primary));
+}
+
+/* --- Navigation --- */
+
+nav.main-footer-nav {
+    height: var(--footer-height);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem
+}
+
+ul.main-footer-link-list {
+    display: flex;
+    list-style: none;
+}
+
+footer.footer-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.main-footer-right {
+    display: flex;
+    align-items: center;
+}
+
+a.main-footer-link {
+    font-size: 0.8rem;
+}
+
+a.main-footer-link:hover, a.copyright-link:hover {
+    color: rgb(var(--secondary));
+}
+
+a.main-footer-link:not(:first-of-type, :last-of-type) {
+    margin: 0 1rem
+}
+
+a.copyright-link {
+    font-weight: 500;
+}
+
 /* --- Navigation Width --- */
 
-@media(max-width: 800px) {
-    nav.mobile-navigation {
-        display: flex;
-    }
-
-    nav.main-navigation {
-        display: none;
-    }
-}
-
-@media(max-width: 450px) {
-    img.mobile-nav-logo { 
-        height: unset;
-        width: calc(107.7vw - 164.65px);
-    }
-}
-
-@media(max-width: 320px) {
-    img.mobile-nav-logo {
-        width: 180px;
+@media(max-width: 475px) {
+    nav.main-footer-nav {
+        height: auto;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -182,4 +246,10 @@ a.main-nav-link:hover {
 
 .hidden {
     display: none;
+}
+
+/* Testing */
+
+.main-content {
+    height: 200vh;
 }
