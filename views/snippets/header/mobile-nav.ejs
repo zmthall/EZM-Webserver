@@ -1,3 +1,23 @@
 <nav class="mobile-navigation">
-    
+    <div class="mobile-nav-left">
+        <a href="<%- pages.home.link %>" class="logo-link">
+            <img class="mobile-nav-logo" src="/images/brand/logo.png" alt="Merch EZ Logo">
+        </a>
+    </div>
+    <div class="mobile-nav-right">
+        <button class="mobile-nav-button" type="button" data-mobile-nav>
+            <%- include('../component/hamburger') %>
+        </button>
+    </div>
+    <aside class="mobile-nav-bar hidden">
+        <ul class="mobile-nav-link-list">
+            <% for(const idx in pages) { %>
+                <a href="<%- pages[idx].link %>" class="mobile-nav-link">
+                    <li class="mobile-nav-link-item">
+                        <%- pages[idx].title %>
+                    </li>
+                </a>
+                <% } %>
+        </ul>
+    </aside>
 </nav>

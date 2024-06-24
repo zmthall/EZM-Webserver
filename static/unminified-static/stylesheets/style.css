@@ -19,7 +19,7 @@
     --font-sans-serif: "Poppins", sans-serif;;
 
     /* Navigation */
-    --main-nav-height: 100px;
+    --nav-height: 100px;
     --main-nav-font-size: 1.25rem;
     --main-nav-font-weight: 600;
     --main-nav-color: white;
@@ -29,6 +29,7 @@
 body {
     font-size: 16px;
     font-weight: 300;
+    background: rgb(var(--background));
 }
 
 *, *::before, *::after {
@@ -43,17 +44,18 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Header Styling */
+/* Header */
+
+header.header-content {
+    background: rgb(var(--primary));
+}
+
+/* --- Navigation --- */
 
 /* --- Main Navigation --- */
 
 nav.main-navigation {
-    height: var(--main-nav-height);
-}
-
-nav.main-navigation {
-    height: var(--main-nav-height);
-    background: rgb(var(--primary));
+    height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     padding: 0 2rem;
@@ -95,6 +97,82 @@ a.main-nav-link:hover {
 }
 
 /* --- Mobile Navigation --- */
+
     nav.mobile-navigation {
         display: none;
-    }  
+        justify-content: space-between;
+        height: var(--nav-height);
+        padding: 0 2rem;
+    }
+
+    a.logo-link {
+        display: flex;
+        align-items: center;
+    }
+
+    img.mobile-nav-logo {
+        height: 80%;
+    }
+
+    .mobile-nav-left {
+        display: flex;
+    }
+
+    button.mobile-nav-button {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+
+    .mobile-nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    /* --- Hamburger Nav --- */
+
+        .hamburger-icon {
+            width: 100%;
+        }
+
+        .hamburger-line {
+            height: 3px;
+            width: 100%;
+            border-radius: 100vw;
+            background: white;
+        }
+
+        button.mobile-nav-button:hover .hamburger-line {
+            background: black;
+        }
+
+        .hamburger-line:not(:last-of-type, :first-of-type) {
+            margin: 0.5rem 0;
+        }
+    
+/* --- Navigation Width --- */
+
+@media(max-width: 800px) {
+    nav.mobile-navigation {
+        display: flex;
+    }
+
+    nav.main-navigation {
+        display: none;
+    }
+}
+
+@media(max-width: 450px) {
+    img.mobile-nav-logo { 
+        height: unset;
+        width: calc(111.5vw - 181.75px);
+    }
+}
+
+/* Bottom Cascade Universal Styling */
+
+.hidden {
+    display: none;
+}
