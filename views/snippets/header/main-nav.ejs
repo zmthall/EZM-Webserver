@@ -1,0 +1,18 @@
+<nav class="main-navigation">
+    <div class="main-nav-left">
+        <a href="<%- pages.home.link %>" class="logo-link">
+            <img class="main-nav-logo" src="/images/brand/logo.png" alt="Merch EZ Logo">
+        </a>
+    </div>
+    <div class="main-nav-right">
+        <ul class="main-nav-link-list">      
+            <% for(const idx in pages) { %>
+                <a href="<%- pages[idx].link %>" class="main-nav-link">
+                    <li class="main-nav-link-item">
+                        <%- pages[idx].title %>
+                    </li>
+                </a>
+            <% } %>
+        </ul>
+    </div>
+</nav>

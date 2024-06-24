@@ -17,6 +17,13 @@
     /* Font Theme */
     --font-serif: "Noto Serif", serif;
     --font-sans-serif: "Poppins", sans-serif;;
+
+    /* Navigation */
+    --main-nav-height: 100px;
+    --main-nav-font-size: 1.25rem;
+    --main-nav-font-weight: 600;
+    --main-nav-color: white;
+    --main-nav-hover: var(--secondary);
 }
 
 body {
@@ -35,3 +42,59 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-weight: 600;
 }
+
+/* Header Styling */
+
+/* --- Main Navigation --- */
+
+nav.main-navigation {
+    height: var(--main-nav-height);
+}
+
+nav.main-navigation {
+    height: var(--main-nav-height);
+    background: rgb(var(--primary));
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.main-nav-left a.logo-link {
+    height: 80%;
+}
+
+img.main-nav-logo {
+    height: 100%;
+}
+
+.main-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+ul.main-nav-link-list {
+    list-style: none;
+    display: flex;
+    margin: 0 1rem;
+    align-items: center;
+    height: 100%;
+}
+
+a.main-nav-link {
+    line-height: 1;
+    color: var(--main-nav-color);
+    text-decoration: none;
+    font-size: var(--main-nav-font-size);
+    font-weight: var(--main-nav-font-weight);
+    margin: 0px 2rem;
+    text-align: center;
+}
+
+a.main-nav-link:hover {
+    color: rgb(var(--main-nav-hover));
+}
+
+/* --- Mobile Navigation --- */
+    nav.mobile-navigation {
+        display: none;
+    }  

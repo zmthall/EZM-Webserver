@@ -1,1 +1,19 @@
-{}
+{
+    "company": {
+        "name": "Merch EZ"
+    },
+    "pages": {
+        "home": {
+            "title": "Home",
+            "link": "/"
+        },
+        "about_us": {
+            "title": "About Us",
+            "link": "/about-us"
+        },
+        "contact_us": {
+            "title": "Contact Us",
+            "link": "/contact-us"
+        }
+    }
+}
