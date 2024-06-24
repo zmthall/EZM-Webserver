@@ -32,6 +32,58 @@ router.get('/', (request, response) => {
     })
 })
 
+router.get('/contact-us', (request, response) => {
+    response.render('contact-us', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'Contact Us',
+            href: "/contact-us",
+            page_type: "contact-page"
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
+router.get('/about-us', (request, response) => {
+    response.render('about-us', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'About Us',
+            href: "/about-us",
+            page_type: "page"
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
+router.get('/policy/privacy-policy', (request, response) => {
+    response.render('privacy-policy', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'Privacy Policy',
+            href: "/policy/privacy-policy",
+            page_type: "policy-page"
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
+router.get('/site-map', (request, response) => {
+    response.render('site-map', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'Site Map',
+            href: "/site-map",
+            page_type: "page"
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
 router.get('*', (request, response) => {
   response.render('404', {
     config: json,
