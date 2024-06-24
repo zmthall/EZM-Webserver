@@ -102,7 +102,7 @@ a.main-nav-link:hover {
         display: none;
         justify-content: space-between;
         height: var(--nav-height);
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 
     a.logo-link {
@@ -129,6 +129,7 @@ a.main-nav-link:hover {
     .mobile-nav-right {
         display: flex;
         align-items: center;
+        margin-right: 0.5rem;
     }
 
     /* --- Hamburger Nav --- */
@@ -167,7 +168,13 @@ a.main-nav-link:hover {
 @media(max-width: 450px) {
     img.mobile-nav-logo { 
         height: unset;
-        width: calc(111.5vw - 181.75px);
+        width: calc(107.7vw - 164.65px);
+    }
+}
+
+@media(max-width: 320px) {
+    img.mobile-nav-logo {
+        width: 180px;
     }
 }
 
