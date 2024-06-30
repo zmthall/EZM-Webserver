@@ -26,6 +26,7 @@ router.get('/', (request, response) => {
         page: {
             title: 'High Quality Merchandise Retailer',
             href: "/",
+            meta: "Welcome to Merchandise EZ, your one-stop shop for high-quality and affordable products. Discover our range of innovative gadgets and accessories. Shop now and enjoy the best deals!",
             page_type: "index-page",
             page_styling: {
                 style1: {
@@ -53,6 +54,7 @@ router.get('/contact-us', (request, response) => {
             title: 'Contact Us',
             href: "/contact-us",
             page_type: "contact-page",
+            meta: "Get in touch with Merchandise EZ for any inquiries, support, or feedback. Our team is here to help you with your shopping needs. Contact us today!",
             page_styling: {
                 style1: {
                     href: '/stylesheets/style.css'
@@ -82,6 +84,7 @@ router.get('/about-us', (request, response) => {
             title: 'About Us',
             href: "/about-us",
             page_type: "page",
+            meta: "Learn more about Merchandise EZ, our mission, and the values that drive us. Discover how we provide top-quality products and excellent customer service. Read our story.",
             page_styling: {
                 style1: {
                     href: '/stylesheets/style.css'
@@ -108,6 +111,7 @@ router.get('/policy/privacy-policy', (request, response) => {
             title: 'Privacy Policy',
             href: "/policy/privacy-policy",
             page_type: "policy-page",
+            meta: "Read Merchandise EZ's privacy policy to learn how we collect, use, and protect your personal information. Your privacy is important to us.",
             page_styling: {
                 style1: {
                     href: '/stylesheets/style.css'
@@ -137,6 +141,7 @@ router.get('/site-map', (request, response) => {
             title: 'Site Map',
             href: "/site-map",
             page_type: "page",
+            meta: "Explore the full layout of Merchandise EZ with our sitemap. Find links to all our product categories, information pages, and more to navigate our site easily.",
             page_styling: {
                 style1: {
                     href: '/stylesheets/style.css'
