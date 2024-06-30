@@ -7,17 +7,12 @@ main.main-content.index-page {
 .hero-shot-container {
     position: relative;
     display: flex;
+    overflow: hidden;
 }
 
-/* .hero-shot-container::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-} */
+span.hero-shot-text svg.check-circle {
+    filter: drop-shadow(3px 3px 2px rgb(0 0 0));
+}
 
 img.index-hero-shot-image {
     width: 100%;
