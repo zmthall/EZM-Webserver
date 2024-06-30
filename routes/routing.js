@@ -26,7 +26,15 @@ router.get('/', (request, response) => {
         page: {
             title: 'High Quality Merchandise Retailer',
             href: "/",
-            page_type: "home-page"
+            page_type: "index-page",
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/index.css'
+                }
+            }
         },
         layout: './layouts/main-layout'
     })
@@ -39,7 +47,18 @@ router.get('/contact-us', (request, response) => {
         page: {
             title: 'Contact Us',
             href: "/contact-us",
-            page_type: "contact-page"
+            page_type: "contact-page",
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                },
+                style3: {
+                    href: '/stylesheets/contact.css'
+                }
+            }
         },
         layout: './layouts/main-layout'
     })
@@ -52,7 +71,15 @@ router.get('/about-us', (request, response) => {
         page: {
             title: 'About Us',
             href: "/about-us",
-            page_type: "page"
+            page_type: "page",
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                }
+            }
         },
         layout: './layouts/main-layout'
     })
@@ -65,7 +92,18 @@ router.get('/policy/privacy-policy', (request, response) => {
         page: {
             title: 'Privacy Policy',
             href: "/policy/privacy-policy",
-            page_type: "policy-page"
+            page_type: "policy-page",
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                },
+                style3: {
+                    href: '/stylesheets/policy.css'
+                }
+            }
         },
         layout: './layouts/main-layout'
     })
@@ -78,7 +116,15 @@ router.get('/site-map', (request, response) => {
         page: {
             title: 'Site Map',
             href: "/site-map",
-            page_type: "page"
+            page_type: "page",
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                }
+            }
         },
         layout: './layouts/main-layout'
     })
@@ -91,7 +137,18 @@ router.get('*', (request, response) => {
     page: {
         title: 'Page not Found: 404',
         href: 'ERROR',
-        page_type: "error-page"
+        page_type: "error-page",
+        page_styling: {
+            style1: {
+                href: '/stylesheets/style.css'
+            },
+            style2: {
+                href: '/stylesheets/page.css'
+            },
+            style3: {
+                href: '/stylesheets/error.css'
+            }
+        }
     },
     layout: './layouts/main-layout'
   })

@@ -1,2 +1,6 @@
-<link rel="stylesheet" href="/stylesheets/style.css">
+<!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
 <script src="/scripts/script.js" defer></script>
+
+<% for(const idx in page.page_styling) { %>
+    <link rel="stylesheet" href="<%- page.page_styling[idx].href %>">
+<% } %>
