@@ -12,6 +12,8 @@
     --hover-background: 207, 210, 241;
     --lightest-grey: 240, 240, 240;
     --grey: 163, 163, 163;
+    --black: 0, 0, 0;
+    --white: 255, 255, 255;
     --darkest-grey: 71, 71, 71;
     --text-color: 25, 25, 25;
 
@@ -52,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main:not(.index-page) {
-    padding: 2rem 1rem 4rem 1rem;
+    padding: 1.5rem 1rem 4rem 1rem;
 }
 
 /* Header */
