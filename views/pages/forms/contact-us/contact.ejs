@@ -1,0 +1,35 @@
+<section class="forms-contact-us top-section">
+    <div class="get-in-touch-wrapper">
+        <h2>Contact Us</h2>
+        <p class="section-text">
+            We're here to help! Whether you have a question, need assistance, 
+            or just want to give feedback, you can reach out to us
+            through any of the following ways. Our team is dedicated to 
+            providing you with the best customer service experience.
+        </p>
+        <h2>Get in Touch</h2>
+        <p class="section-text">
+            For general inquiries, support, or feedback, please email us at: <a href="mailto:<%- company.contact_email %>" class="page-link"><%- company.contact_email %></a>
+        </p>
+    </div>
+    <div class="contact-us-form-wrapper">
+        <h2>Contact Form</h2>
+        <p class="section-text">
+            You can also use the form below to send us a message directly. 
+            We strive to respond to all inquiries within 24 hours.
+        </p>
+        <form class="contact-us-form" action="/submit-contact-form" method="POST">
+            <label class="contact-form-label" for="name">Name:<span class="contact-form-required">*</span></label>
+            <input class="contact-form-text" type="text" id="name" name="name" required>
+            <label class="contact-form-label" for="email">Email:<span class="contact-form-required">*</span></label>
+            <input class="contact-form-text email" type="email" id="email" name="email" required>
+        
+            <label class="contact-form-label" for="phone">Phone Number (optional):</label>
+            <input class="contact-form-text tel" type="tel" id="phone" name="phone">
+        
+            <label class="contact-form-label" for="message">Message:<span class="contact-form-required">*</span></label>
+            <textarea class="contact-form-text textarea" id="message" name="message" rows="5" required></textarea>
+            <button class="primary-button contact-us-form" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>

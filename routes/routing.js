@@ -47,15 +47,15 @@ router.get('/', (request, response) => {
     })
 })
 
-router.get('/accessibility', (request, response) => {
+router.get('/policy/accessibility', (request, response) => {
     response.render('accessibility', {
         config: json,
         helper: helper,
         page: {
             title: 'Accessibility',
             name: 'Accessibility',
-            href: '/accessibility',
-            page_type: 'contact-page',
+            href: '/policy/accessibility',
+            page_type: 'policy-page',
             meta: `Discover Merchandise EZ's commitment to accessibility. Learn about our efforts to ensure our website and services are accessible to everyone, including those with disabilities.`,
             page_styling: {
                 style1: {
@@ -65,7 +65,7 @@ router.get('/accessibility', (request, response) => {
                     href: '/stylesheets/page.css'
                 },
                 style3: {
-                    href: '/stylesheets/contact.css'
+                    href: '/stylesheets/policy.css'
                 }
             },
             page_scripts: {

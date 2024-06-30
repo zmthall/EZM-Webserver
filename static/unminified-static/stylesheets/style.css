@@ -16,6 +16,7 @@
     --white: 255, 255, 255;
     --darkest-grey: 71, 71, 71;
     --text-color: 25, 25, 25;
+    --required-color: 112, 41, 99;
 
     /* Font Theme */
     --font-serif: "Noto Serif", serif;
@@ -64,6 +65,30 @@ a.page-link {
 
 a.page-link:hover {
     color: rgb(var(--secondary));
+}
+
+span.bolded-text {
+    font-weight: 600;
+}
+
+section.top-section {
+    margin-top: 1rem;
+}
+
+.primary-button {
+    padding: 0.75rem;
+    background: rgb(var(--primary));
+    color: rgb(var(--white));
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.primary-button:hover {
+    background: rgb(var(--secondary));
 }
 
 /* Header */

@@ -1,7 +1,9 @@
 {
     "company": {
         "name": "Merch EZ",
-        "policy_email": "policy@merch-ez.com"
+        "policy_email": "policy@merch-ez.com",
+        "accessibility_email": "accessibility@merch-ez.com",
+        "contact_email": "contact@merch-ez.com"
     },
     "header_pages": {
         "home": {
@@ -28,7 +30,7 @@
         },
         "accessibility": {
             "title": "Accessibility",
-            "link": "/accessibility"
+            "link": "/policy/accessibility"
         },
         "contact_us": {
             "title": "Contact Us",
@@ -37,6 +39,34 @@
         "site_map": {
             "title": "Site Map",
             "link": "/site-map"
+        }
+    },
+    "site_map": {
+        "pages": {
+            "home": {
+                "title": "Home",
+                "link": "/"
+            },
+            "about_us": {
+                "title": "About Us",
+                "link": "/about-us"
+            },
+            "contact_us": {
+                "title": "Contact Us",
+                "link": "/contact-us"
+            },
+            "privacy_policy": {
+                "title": "Privacy Policy",
+                "link": "/policy/privacy-policy"
+            },
+            "accessibility": {
+                "title": "Accessibility",
+                "link": "/policy/accessibility"
+            },
+            "site_map": {
+                "title": "Site Map",
+                "link": "/site-map"
+            }
         }
     }
 }

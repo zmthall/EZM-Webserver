@@ -1,9 +1,5 @@
 /* Privacy Policy */
 
-section.policies-privacy-policy {
-    margin-top: 1rem;
-}
-
 section.policies-privacy-policy h2 {
     color: rgb(var(--text-color));
 }
