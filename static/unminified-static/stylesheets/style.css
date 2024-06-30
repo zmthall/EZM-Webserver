@@ -9,6 +9,7 @@
     --primary: 0, 79, 163;
     --secondary: 82, 10, 133;
     --background: 191, 195, 237;
+    --hover-background: 207, 210, 241;
     --lightest-grey: 240, 240, 240;
     --grey: 163, 163, 163;
     --darkest-grey: 71, 71, 71;
@@ -32,6 +33,10 @@ body {
     font-size: 16px;
     font-weight: 300;
     background: rgb(var(--background));
+}
+
+body.no-scroll {
+    overflow-y: hidden;
 }
 
 *, *::before, *::after {
@@ -154,6 +159,63 @@ header.header-content {
             .hamburger-line:not(:last-of-type, :first-of-type) {
                 margin: 0.5rem 0;
             }
+
+        /* --- Mobile Nav Side Drawer --- */
+
+                aside.mobile-nav-bar {
+                    position: fixed;
+                    right: 0;
+                    top: 0;
+                    height: 100dvh;
+                    width: 320px;
+                    background: rgb(var(--background));
+                    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+                    transform: translate(100%);
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                aside.mobile-nav-bar.open {
+                    transform: translate(0);
+                }
+        
+                ul.mobile-nav-link-list {
+                    list-style: none;
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    translate: 0 -50%;
+                }
+        
+                button.mobile-nav-close-button {
+                    background: none;
+                    border: none;
+                    font-weight: 700;
+                    font-family: var(--font-sans-serif);
+                    font-size: 1.75em;
+                    margin: 0.75rem;
+                    cursor: pointer;
+                }
+        
+                button.mobile-nav-close-button:hover {
+                    color: rgb(var(--darkest-grey))
+                }
+        
+                a.mobile-nav-link {
+                    display: flex;
+                    height: 50px;
+                    width: 100%;
+                    text-decoration: none;
+                    font-family: var(--font-serif);
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    background: rgb(var(--background));
+                }
+        
+                a.mobile-nav-link:hover {
+                    background: rgb(var(--hover-background));
+                }
     
     /* --- Navigation Width --- */
 

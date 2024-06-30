@@ -5,18 +5,19 @@
         </a>
     </div>
     <div class="mobile-nav-right">
-        <button class="mobile-nav-button" type="button" data-mobile-nav>
+        <button class="mobile-nav-button" type="button" data-mobile-nav-button>
             <%- include('../component/hamburger') %>
         </button>
     </div>
-    <aside class="mobile-nav-bar hidden">
+    <aside class="mobile-nav-bar hidden" data-mobile-nav-drawer>
+        <button type="button" class="mobile-nav-close-button" data-mobile-nav-close-button>X</button>
         <ul class="mobile-nav-link-list">
             <% for(const idx in pages) { %>
-                <a href="<%- pages[idx].link %>" class="mobile-nav-link">
-                    <li class="mobile-nav-link-item">
+                <li class="mobile-nav-link-item">
+                    <a href="<%- pages[idx].link %>" class="mobile-nav-link">
                         <%- pages[idx].title %>
-                    </li>
-                </a>
+                    </a>
+                </li>
                 <% } %>
         </ul>
     </aside>
