@@ -11,6 +11,8 @@ main.main-content:not(.index-page) {
         border-bottom: 1px solid rgba(var(--black), 0.1);
         padding-bottom: 0.25rem;
         font-size: 1.3rem;
+        display: flex;
+        gap: 0.25rem;
     }
 
     a.breadcrumb-link {
@@ -22,9 +24,11 @@ main.main-content:not(.index-page) {
         color: rgb(var(--secondary));
     }
 
-    span.breadcrumb-current {
+    h1.breadcrumb-current {
         color: rgb(var(--text-color));
         font-weight: 700;
+        font-family: var(--font-sans-serif);
+        font-size: 1.3rem;
     }
 
     span.breadcrumb-separator {
