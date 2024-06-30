@@ -1,6 +1,10 @@
-<!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
-<script src="/scripts/script.js" defer></script>
+<!-- inserting page scripts -->
 
+<% for(const idx in page.page_scripts) { %>
+    <script src="<%- page.page_scripts[idx].href %>" defer></script>
+<% } %>
+
+<!-- inserting page styling -->
 <% for(const idx in page.page_styling) { %>
     <link rel="stylesheet" href="<%- page.page_styling[idx].href %>">
 <% } %>

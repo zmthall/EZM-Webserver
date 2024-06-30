@@ -34,6 +34,11 @@ router.get('/', (request, response) => {
                 style2: {
                     href: '/stylesheets/index.css'
                 }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
+                }
             }
         },
         layout: './layouts/main-layout'
@@ -58,6 +63,11 @@ router.get('/contact-us', (request, response) => {
                 style3: {
                     href: '/stylesheets/contact.css'
                 }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
+                }
             }
         },
         layout: './layouts/main-layout'
@@ -78,6 +88,11 @@ router.get('/about-us', (request, response) => {
                 },
                 style2: {
                     href: '/stylesheets/page.css'
+                }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
                 }
             }
         },
@@ -103,6 +118,11 @@ router.get('/policy/privacy-policy', (request, response) => {
                 style3: {
                     href: '/stylesheets/policy.css'
                 }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
+                }
             }
         },
         layout: './layouts/main-layout'
@@ -123,6 +143,11 @@ router.get('/site-map', (request, response) => {
                 },
                 style2: {
                     href: '/stylesheets/page.css'
+                }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
                 }
             }
         },
@@ -147,6 +172,11 @@ router.get('*', (request, response) => {
             },
             style3: {
                 href: '/stylesheets/error.css'
+            }
+        },
+        page_scripts: {
+            script1: {
+                href: '/scripts/script.js'
             }
         }
     },
