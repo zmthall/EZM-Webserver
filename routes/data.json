@@ -1,6 +1,7 @@
 {
     "company": {
-        "name": "Merch EZ"
+        "name": "Merch EZ",
+        "policy_email": "policy@merch-ez.com"
     },
     "header_pages": {
         "home": {
@@ -24,6 +25,10 @@
         "privacy_policy": {
             "title": "Privacy Policy",
             "link": "/policy/privacy-policy"
+        },
+        "accessibility": {
+            "title": "Accessibility",
+            "link": "/accessibility"
         },
         "contact_us": {
             "title": "Contact Us",
