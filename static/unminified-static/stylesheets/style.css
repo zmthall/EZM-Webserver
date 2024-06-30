@@ -276,6 +276,8 @@ nav.main-footer-nav {
 ul.main-footer-link-list {
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer.footer-content a {
@@ -301,8 +303,9 @@ a.main-footer-link:hover, a.copyright-link:hover {
     color: rgb(var(--secondary));
 }
 
-a.main-footer-link:not(:first-of-type, :last-of-type) {
-    margin: 0 1rem
+a.main-footer-link {
+    padding: 0 0.5rem;
+    white-space: nowrap;
 }
 
 a.copyright-link {
@@ -311,7 +314,7 @@ a.copyright-link {
 
 /* --- Navigation Width --- */
 
-@media(max-width: 475px) {
+@media(max-width: 600px) {
     nav.main-footer-nav {
         height: auto;
         flex-direction: column-reverse;

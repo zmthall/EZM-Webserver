@@ -47,6 +47,37 @@ router.get('/', (request, response) => {
     })
 })
 
+router.get('/accessibility', (request, response) => {
+    response.render('accessibility', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'Accessibility',
+            name: 'Accessibility',
+            href: '/accessibility',
+            page_type: 'contact-page',
+            meta: `Discover Merchandise EZ's commitment to accessibility. Learn about our efforts to ensure our website and services are accessible to everyone, including those with disabilities.`,
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                },
+                style3: {
+                    href: '/stylesheets/contact.css'
+                }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
+                }
+            }
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
 router.get('/contact-us', (request, response) => {
     response.render('contact-us', {
         config: json,
