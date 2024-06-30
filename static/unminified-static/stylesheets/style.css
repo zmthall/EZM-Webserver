@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+main:not(.index-page) {
+    padding: 2rem 1rem 4rem 1rem;
+}
+
 /* Header */
 
 header.header-content {
@@ -172,6 +176,7 @@ header.header-content {
                     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
                     transform: translate(100%);
                     transition: transform 0.5s ease-in-out;
+                    z-index: 10;
                 }
 
                 aside.mobile-nav-bar.open {
