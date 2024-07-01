@@ -1,6 +1,8 @@
 const express = require('express')
 const helper = require('../files/helper.js')
+const mailer = require('../files/mailer.js')
 var router = express.Router()
+require('dotenv').config()
 
 var fs = require("fs"), json;
 
@@ -77,6 +79,55 @@ router.get('/policy/accessibility', (request, response) => {
         layout: './layouts/main-layout'
     })
 })
+
+router.post('/contact-us/send-message', (request, response) => {
+    var data = {
+        name: request.body.name,
+        email: request.body.email,
+        phone: request.body.phone,
+        message: request.body.message
+    }
+
+    var message = {
+        from: undefined,
+        to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
+        subject: `Contact Us Submission - ${data.name}`,
+        text: `Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
+        html: `<p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
+    }
+
+    mailer.send_email(message).catch(console.error)
+
+    response.render('contact-us', {
+        config: json,
+        helper: helper,
+        page: {
+            title: 'Contact Us',
+            name: 'Contact Us',
+            href: '/contact-us',
+            page_type: 'contact-page',
+            meta: 'Get in touch with Merchandise EZ for any inquiries, support, or feedback. Our team is here to help you with your shopping needs. Contact us today!',
+            page_styling: {
+                style1: {
+                    href: '/stylesheets/style.css'
+                },
+                style2: {
+                    href: '/stylesheets/page.css'
+                },
+                style3: {
+                    href: '/stylesheets/contact.css'
+                }
+            },
+            page_scripts: {
+                script1: {
+                    href: '/scripts/script.js'
+                }
+            }
+        },
+        layout: './layouts/main-layout'
+    })
+})
+
 
 router.get('/contact-us', (request, response) => {
     response.render('contact-us', {
