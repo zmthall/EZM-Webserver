@@ -34,3 +34,31 @@ main.main-content:not(.index-page) {
     span.breadcrumb-separator {
         font-weight: 100;
     }
+
+/* Thank You Page */
+    
+.message-received-container {
+    font-size: 15rem;
+    display: flex;
+    justify-content: center;
+    color: rgb(var(--secondary));
+}
+
+section.forms-thank-you p.section-text {
+    font-weight: 600;
+    width: 650px;
+    text-align: center;
+}
+
+section.forms-thank-you {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media(max-width: 715px) {
+    section.forms-thank-you p.section-text {
+        width: 100%;
+    }
+}

@@ -23,10 +23,7 @@ async function send_email(message) {
 
     if(message.from === undefined)
         message.from = mailer_settings.username
-
-    console.log(transporter)
-    console.log(message)
-
+    
     const info = await transporter.sendMail(message)
 
     console.log("Message was sent: %s", info.messageId)

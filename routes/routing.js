@@ -80,24 +80,7 @@ router.get('/policy/accessibility', (request, response) => {
     })
 })
 
-router.post('/contact-us/send-message', (request, response) => {
-    var data = {
-        name: request.body.name,
-        email: request.body.email,
-        phone: request.body.phone,
-        message: request.body.message
-    }
-
-    var message = {
-        from: undefined,
-        to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
-        subject: `Contact Us Submission - ${data.name}`,
-        text: `Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
-        html: `<p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
-    }
-
-    mailer.send_email(message).catch(console.error)
-
+router.get('/contact-us', (request, response) => {
     response.render('contact-us', {
         config: json,
         helper: helper,
@@ -128,26 +111,43 @@ router.post('/contact-us/send-message', (request, response) => {
     })
 })
 
+router.post('/contact-us/send-message', (request, response, next) => {
+    var data = {
+        name: request.body.name,
+        email: request.body.email,
+        phone: request.body.phone,
+        message: request.body.message
+    }
 
-router.get('/contact-us', (request, response) => {
-    response.render('contact-us', {
+    var message = {
+        from: undefined,
+        to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
+        subject: `Contact Us Submission - ${data.name}`,
+        text: `Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
+        html: `<p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
+    }
+
+    mailer.send_email(message).catch(console.error)
+
+    response.status(200).redirect('/contact-us/thank-you')
+})
+
+router.get('/contact-us/thank-you', (request, response) => {
+    response.render('thank-you', {
         config: json,
         helper: helper,
         page: {
-            title: 'Contact Us',
-            name: 'Contact Us',
-            href: '/contact-us',
-            page_type: 'contact-page',
-            meta: 'Get in touch with Merchandise EZ for any inquiries, support, or feedback. Our team is here to help you with your shopping needs. Contact us today!',
+            title: 'Thank You',
+            name: 'Thank You',
+            href: '/contact-us/thank-you',
+            page_type: 'page',
+            meta: 'Thank you for getting in touch with Merchandise EZ. We have received your message and will respond as soon as possible. Your satisfaction is our priority.',
             page_styling: {
                 style1: {
                     href: '/stylesheets/style.css'
                 },
                 style2: {
                     href: '/stylesheets/page.css'
-                },
-                style3: {
-                    href: '/stylesheets/contact.css'
                 }
             },
             page_scripts: {
