@@ -138,10 +138,12 @@
                 <li class="policy-list-item">The right to erasure</li>
                 <li class="policy-list-item">The right to restrict processing</li>
                 <li class="policy-list-item">The right to data portability</li>
-                <li class="policy-list-item">The right to object</li>
-                <ul class="policy-unordered-list">
-                    <li class="policy-list-item">To exercise these rights, please contact us at <a href="mailto:<%- company.policy_email %>" class="page-link"><%- company.policy_email %></a>.</li>
-                </ul>
+                <li class="policy-list-item">
+                    The right to object
+                    <ul class="policy-unordered-list">
+                        <li class="policy-list-item">To exercise these rights, please contact us at <a href="mailto:<%- company.policy_email %>" class="page-link"><%- company.policy_email %></a>.</li>
+                    </ul>
+                </li>
             </ul>
         </li>
         <li class="policy-list-item">
@@ -169,6 +171,5 @@
             </ul>
         </li>
     </ol>
-
     <%- include('../../../snippets/component/contact-form', { page: page }) %>
 </section>

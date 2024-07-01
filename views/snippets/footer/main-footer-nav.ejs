@@ -8,9 +8,9 @@
         <ul class="main-footer-link-list">
             <% for(const idx in pages) { %>
                 <% if(pages[idx].title != "Home") { %>
-                    <a href="<%- pages[idx].link %>" class="main-footer-link">
-                        <li class="main-footer-link-item"><%- pages[idx].title %></li>
-                    </a>
+                    <li class="main-footer-link-item">
+                        <a href="<%- pages[idx].link %>" class="main-footer-link"><%- pages[idx].title %></a>
+                    </li>
                 <% } %>
             <% } %>
         </ul>

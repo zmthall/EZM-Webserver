@@ -374,12 +374,13 @@ a.main-footer-link:hover, a.copyright-link:hover {
 }
 
 a.main-footer-link {
-    padding: 0 0.5rem;
     white-space: nowrap;
+    padding: 0.75rem;
 }
 
 a.copyright-link {
     font-weight: 500;
+    padding: 0.5rem;
 }
 
 /* --- Navigation Width --- */
@@ -390,7 +391,10 @@ a.copyright-link {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        padding: 0.5rem 1rem;
     }
+    
+
 }
 
 /* Bottom Cascade Universal Styling */
@@ -398,9 +402,3 @@ a.copyright-link {
 .hidden {
     display: none;
 }
-
-/* Testing */
-
-/* .main-content {
-    height: 200vh;
-} */
