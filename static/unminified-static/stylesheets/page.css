@@ -5,6 +5,10 @@ main.main-content:not(.index-page) {
     margin: 0 auto;
 }
 
+ul.section-unordered-list {
+    margin-left: 1.5rem;
+}
+
 /* --- Breadcrumb --- */
 
     nav.page-breadcrumb {

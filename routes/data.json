@@ -55,6 +55,10 @@
                 "title": "Contact Us",
                 "link": "/contact-us"
             },
+            "thank_you": {
+                "title": "Thank You",
+                "link": "/contact-us/thank-you"
+            },
             "privacy_policy": {
                 "title": "Privacy Policy",
                 "link": "/policy/privacy-policy"

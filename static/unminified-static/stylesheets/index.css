@@ -48,3 +48,80 @@ h1.hero-shot-title.show {
     transform: translate(0);
     opacity: 1;
 }
+
+/* About Us Section */
+
+section.index-current-projects {
+    margin-top: 3rem;
+}
+
+section.index-about-us,
+section.index-current-projects {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 1rem 0 1rem;
+    align-items: center;
+}
+
+.index-about-us-container-text,
+.index-current-venture-container-text {
+    width: 50%;
+    padding-bottom: 0;
+}
+
+.index-about-us-container-image,
+.index-current-venture-container-image {
+    width: 50%;
+}
+
+img.index-about-us-image,
+img.index-current-venture-image {
+    width: 100%;
+}
+
+@media(max-width: 900px) {
+    section.index-about-us {
+        flex-direction: column;
+    }
+
+    section.index-current-projects {
+        flex-direction: column-reverse;
+    }
+
+    .index-about-us-container-text,
+    .index-about-us-container-image,
+    .index-current-venture-container-text,
+    .index-current-venture-container-image {
+        width: 80%;
+    }
+
+    .index-about-us-container-text,
+    .index-current-venture-container-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta-button {
+        align-self: center;
+    }
+
+    section.index-about-us h2,
+    section.index-current-projects h2 {
+        text-align: center;
+    }
+
+    section.index-current-projects {
+        margin-top: 0;
+    }
+}
+
+
+@media(max-width: 550px) {
+
+    .index-about-us-container-text,
+    .index-about-us-container-image, 
+    .index-current-venture-container-text,
+    .index-current-venture-container-image {
+        width: 100%;
+    }
+}
