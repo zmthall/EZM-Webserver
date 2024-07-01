@@ -115,10 +115,12 @@
     </p>
     <ul class="policy-unordered-list">
         <li class="policy-list-item">By email: <a href="mailto:<%- company.accessibility_email %>" class="page-link"><%- company.accessibility_email %></a></li>
-        <li class="policy-list-item">By visiting this page on our website: <a href="/contact-us" class="page-link">Contact Us</a></li>
+        <li class="policy-list-item">By using the form at the bottom of this page</li>
     </ul>
     <p class="policy-text">
         We are committed to making our website accessible to everyone and will work diligently to address any issues and improve
         the user experience for all visitors.
     </p>
+
+    <%- include('../../../snippets/component/contact-form', { page: page }) %>
 </section>

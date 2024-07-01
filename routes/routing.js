@@ -68,6 +68,9 @@ router.get('/policy/accessibility', (request, response) => {
                 },
                 style3: {
                     href: '/stylesheets/policy.css'
+                },
+                style4: {
+                    href: '/stylesheets/contact.css'
                 }
             },
             page_scripts: {
@@ -114,6 +117,7 @@ router.get('/contact-us', (request, response) => {
 router.post('/contact-us/send-message', (request, response, next) => {
     var data = {
         name: request.body.name,
+        page: request.body.page_name,
         email: request.body.email,
         phone: request.body.phone,
         message: request.body.message
@@ -123,8 +127,8 @@ router.post('/contact-us/send-message', (request, response, next) => {
         from: undefined,
         to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
         subject: `Contact Us Submission - ${data.name}`,
-        text: `Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
-        html: `<p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
+        text: `Page: ${data.page} Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
+        html: `<p>Page: ${data.page}</p><p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
     }
 
     mailer.send_email(message).catch(console.error)
@@ -207,6 +211,9 @@ router.get('/policy/privacy-policy', (request, response) => {
                 },
                 style3: {
                     href: '/stylesheets/policy.css'
+                },
+                style4: {
+                    href: '/stylesheets/contact.css'
                 }
             },
             page_scripts: {

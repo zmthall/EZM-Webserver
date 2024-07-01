@@ -165,8 +165,10 @@
             </p>
             <ul class="policy-unordered-list">
                 <li class="policy-list-item">By email: <a href="mailto:<%- company.policy_email %>" class="page-link"><%- company.policy_email %></a></li>
-                <li class="policy-list-item">By visiting this page on our website: <a href="/contact-us" class="page-link">Contact Us</a></li>
+                <li class="policy-list-item">Using the form at the bottom of the page</li>
             </ul>
         </li>
     </ol>
+
+    <%- include('../../../snippets/component/contact-form', { page: page }) %>
 </section>
