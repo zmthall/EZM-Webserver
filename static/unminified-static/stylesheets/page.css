@@ -2,6 +2,7 @@
 
 main.main-content:not(.index-page) {
     max-width: 1200px;
+    min-height: calc(100svh - var(--footer-height) - var(--nav-height));
     margin: 0 auto;
 }
 
