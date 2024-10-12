@@ -1,8 +1,12 @@
 const express = require('express')
 const helper = require('../files/helper.js')
 const mailer = require('../files/mailer.js')
+const multer  = require('multer')
+const axios = require('axios')
+
 var router = express.Router()
 require('dotenv').config()
+const upload = multer()
 
 var fs = require("fs"), json;
 
@@ -114,26 +118,29 @@ router.get('/contact-us', (request, response) => {
     })
 })
 
-router.post('/contact-us/send-message', (request, response, next) => {
-    var data = {
-        name: request.body.name,
-        page: request.body.page_name,
-        email: request.body.email,
-        phone: request.body.phone,
-        message: request.body.message
+router.post('/contact-us/send-message', upload.none(), (request, response, next) => {
+    const data = request.body
+
+    const verifyURL = new URL('https://www.google.com/recaptcha/api/siteverify');
+
+    verifyURL.searchParams.append('secret', process.env.RECAPTCHA_KEY);
+    verifyURL.searchParams.append('response', request.body.token)
+    const verification = async () => {
+        const verify = await axios.post(verifyURL);
+    
+        if(verify.data.score > 0.4) {
+            var message = {
+                from: undefined,
+                to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
+                subject: `Contact Us Submission - ${data.name}`,
+                text: `Page: ${data.page_name} Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
+                html: `<p>Page: ${data.page_name}</p><p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
+            }
+        
+            mailer.send_email(message).catch(console.error)
+        }
     }
-
-    var message = {
-        from: undefined,
-        to: ['admin@merch-ez.com', 'simple.ez.merch@gmail.com'],
-        subject: `Contact Us Submission - ${data.name}`,
-        text: `Page: ${data.page} Name: ${data.name} Email: ${data.email} Phone: ${data.phone} Message: ${data.message}`,
-        html: `<p>Page: ${data.page}</p><p>Name: ${data.name}</p><p>Email: ${data.email}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`,
-    }
-
-    mailer.send_email(message).catch(console.error)
-
-    response.status(200).redirect('/contact-us/thank-you')
+    verification(); 
 })
 
 router.get('/contact-us/thank-you', (request, response) => {

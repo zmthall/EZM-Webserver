@@ -27,7 +27,7 @@ app.use('/', indexRouter)
 
 const serverHTTP = http.createServer(app)
 // const serverHTTPS = https.createServer(options, app) // create an https server (only necessary if running server idependent of a hosting service like plesk)
-var port = 80
+var port = process.env.PORT
 // var portHTTPS = 443
 
 serverHTTP.listen(port, () => console.log(`HTTP Server - Listening on port: ${port}`))
